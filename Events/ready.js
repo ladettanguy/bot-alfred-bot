@@ -1,7 +1,8 @@
 module.exports = async(client) => {
     client.user.setPresence({
         game: {
-            name: "Nouveau bot - Tuto"
+            name: "Administration"
         }
     });
+    console.log("je suis connecté")
 };

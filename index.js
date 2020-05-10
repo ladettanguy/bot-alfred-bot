@@ -2,13 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require("fs");
 
-client.on('ready', e=>{
-    console.log('Je suis connecté');
-});
-
-client.on('message', function(message){
-    console.log(message.guild.roles);
-});
 
 client.on('messageReactionAdd', function(messageReaction){
     let role = messageReaction.message.guild.roles.resolve('name','numberA');
