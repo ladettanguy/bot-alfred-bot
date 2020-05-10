@@ -1,6 +1,6 @@
-const discord = require('discord.js');
+const Discord = require('discord.js');
 
-module.export.run = async(client, message, args) => {
+module.exports.run = async(client, message, args) => {
 
     let début = Date.now();
     await message.channel.send("ping").then(async(m) =>{

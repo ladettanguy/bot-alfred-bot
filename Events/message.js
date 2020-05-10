@@ -1,4 +1,4 @@
-const discord = require('discord.js');
+const Discord = require('discord.js');
 const prefix = "!";
 
 module.exports = async(client, message) => {
@@ -12,7 +12,7 @@ module.exports = async(client, message) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const commande = args.shift();
 
-    constcmd = client.commands.get(commande);
+    const cmd = client.commands.get(commande);
     //si la commande n'existe pas
     if(!cmd) return;
 
