@@ -12,11 +12,11 @@ module.exports.run = async(client,message, args) => {
 
     let role = message.guild.roles.find(x => x.name === args[1]);
 
-    member.addRole(role).catch(console.error).then(message => {
-        message.channel.send(`${member} a maintenant le rôle ${role.name}`);
+    member.removeRole(role).catch(console.error).then(message => {
+        message.channel.send(`${member} n'a plus le rôle ${role.name}`);
     });
 }
 
 module.exports.help = {
-    name:"addrole"
+    name:"delrole"
 }
