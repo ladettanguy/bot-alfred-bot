@@ -5,13 +5,13 @@ module.exports.run = async(client, message, args) => {
     const membre = message.mentions.members.first() || message.member;
     //testé si un membre est trouvé
     if(!membre) return message.channel.send(`veuillez mentionner un utilisateur !`);
-
+    console.log(membre.user)
     message.channel.send({
         embed:{
             color: 0x755555,
             title: `Statistiques de l'utilisateur **${membre.user.tag}**`,
             thumbnail: {
-                url: membre.user.displayAvatarURL
+                url: `${membre.user.displayAvatarURL}`
             },
             fields: 
             [
@@ -25,7 +25,7 @@ module.exports.run = async(client, message, args) => {
                 },
                 {
                     name: "> Jeu :",
-                    value: `${membre.user.presence.game ? membre.user.presence.game.name : "Aucun jeu en cours"}`
+                    value: `${membre.user.activities ? membre.user.activities : "Aucun jeu en cours"}`
                 },
                 {
                     name: "> Rejoin le serveur le :",
