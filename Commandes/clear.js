@@ -12,7 +12,7 @@ module.exports.run = async(client,message,args) => {
     //vérification d'un nombre passer en argument
     if(isNaN(args[0])) return message.channel.send(`Vous devez spécifier un nombre`);
 
-    message.channel.bulkDelete(args[0])
+    message.channel.bulkDelete(args[0]+1)
     .then(message =>{
         message.channel.send(`${args[0]} message(s) ont été supprimés !`);
     })

@@ -12,7 +12,7 @@ module.exports.run = async(client,message,args) => {
 
     const info = await ytdl.getInfo(args[0]);
     const connection = await message.member.voiceChannel.join();
-    const dispatcher = await connection.playStream(
+    const dispatcher = await connection.play(
         ytdl(args[0], {filter: 'audioonly'})
     );
     message.channel.send(`Musique ajoutée : ${info.title}`)

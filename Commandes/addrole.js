@@ -10,11 +10,9 @@ module.exports.run = async(client,message, args) => {
     let member = message.guild.member(message.mentions.users.first());
     if(!member) return message.channel.send(`L'utilisateur n'a pas été trouvé`);
 
-    let role = message.guild.roles.resolve(x => x.name === args[1]);
+    let role = message.guild.roles.cache.find(x => x.name === args[1]);
 
-    console.log(member);
-    console.log(role);
-    member.addRole(role.id).catch(console.error).then(message => {
+    member.roles.add(role.id).catch(console.error).then(mx => {
         message.channel.send(`${member} a maintenant le rôle ${role.name}`);
     });
 }
